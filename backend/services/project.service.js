@@ -1,5 +1,5 @@
 import projectModel from "../models/project.model.js";
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 export const createProject = async ({ name, userId }) => {
   if (!name) {
