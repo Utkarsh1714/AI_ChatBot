@@ -10,7 +10,7 @@ import {
 import Markdown from "markdown-to-jsx";
 import hljs from "highlight.js";
 import "highlight.js/styles/github.css"; // Or any other theme of your choice
-import { getWebContainer } from "../config/webcontainer";
+import { getWebContainer } from "../config/webContainer.js";
 import { debounce } from "lodash";
 
 function SyntaxHighlightedCode(props) {
