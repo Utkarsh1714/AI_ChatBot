@@ -12,6 +12,18 @@ export const initializeSocket = (projectId) => {
     },
   });
 
+  socketInstance.on("connect", () => {
+    console.log("Connected to socket!");
+  });
+
+  socketInstance.on("disconnect", () => {
+    console.log("Disconnected from socket.");
+  });
+
+  socketInstance.on("error", (err) => {
+    console.log("Socket error:", err);
+  });
+
   return socketInstance;
 };
 
