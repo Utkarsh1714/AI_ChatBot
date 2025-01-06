@@ -445,7 +445,11 @@ const Project = () => {
                 className="w-full p-2 px-4 bg-slate-200"
               />
             </div>
-            <iframe src={iframeUrl} className="w-full h-full"></iframe>
+            <iframe
+              src={iframeUrl}
+              className="w-full h-full"
+              sandbox="allow-scripts allow-same-origin"
+            ></iframe>
           </div>
         )}
       </section>
