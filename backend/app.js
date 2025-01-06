@@ -16,10 +16,7 @@ const app = express();
 // CORS Configuration for Production
 app.use(
   cors({
-    origin: "https://ai-chatbot-frontend-5cjt.onrender.com",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, // Allow cookies and credentials
+    origin: process.env.FRONTEND_URL,
   })
 );
 app.use(morgan("dev"));
