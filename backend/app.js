@@ -13,14 +13,15 @@ connectDB();
 
 const app = express();
 
-const corsOptions = {
-  origin: process.env.FRONTEND_URL,
-  methods: ["GET", "POST"],
-  credentials: true, // Allow credentials like cookies or authorization headers
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
-
-app.use(cors(corsOptions));
+// CORS Configuration for Production
+app.use(
+  cors({
+    origin: "https://ai-chatbot-frontend-5cjt.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // Allow cookies and credentials
+  })
+);
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
