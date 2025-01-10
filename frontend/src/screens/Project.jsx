@@ -120,6 +120,11 @@ const Project = () => {
       console.log(message);
 
       webContainer?.mount(message.fileTree);
+      if (webContainer) {
+        webContainer.mount(message.fileTree);
+      } else {
+        console.warn("Web container not initialized yet.");
+      }
 
       if (message.fileTree) {
         setFileTree(message.fileTree);
